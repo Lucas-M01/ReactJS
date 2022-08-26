@@ -18,4 +18,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--gray-600);
+    --webkit-font-smoothing: antialiased;
+}
+
+:focus {
+    outline: transparent;
+    box-shadow: 0 0 0 1px var(--purple-dark);
 }
