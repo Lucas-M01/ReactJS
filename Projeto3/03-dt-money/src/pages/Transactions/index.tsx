@@ -4,6 +4,7 @@ import { SearchForm } from "./components/SearchForm";
 import { PriceHighLight, TransactionsContainer, TransactionsTable } from "./styles";
 
 export function Transactions() {
+    
     return(
         <div>
             <Header />
