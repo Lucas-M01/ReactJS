@@ -11,11 +11,11 @@ export const SummaryContainer = styled.section`
     gap: 2rem;
 
     margin-top: -5rem;
-`
+`;
 
 interface SummaryCardProps {
     variant?: 'green' | 'red' | 'yellow';
-}
+};
 
 export const SummaryCard = styled.div<SummaryCardProps>`
     background: ${({theme})=> theme.colors["base-gray-600"]};
@@ -27,21 +27,21 @@ export const SummaryCard = styled.div<SummaryCardProps>`
         align-items: center;
         justify-content: space-between;
         color: ${({theme}) => theme.colors["base-gray-300"]}
-    }
+    };
 
     strong {
         display: block;
         margin-top: 1rem;
         font-size: 2rem;
-    }
+    };
 
     ${props => props.variant === 'green' && css`
         background: ${props.theme.colors["produto-green-700"]}
-    `}
+    `};
 
     ${props => props.variant === 'red' && css`
         background: ${props.theme.colors["produto-red-500"]}
-    `}
+    `};
 
     ${props => props.variant === 'yellow' && css`
         background: ${props.theme.colors["produto-yellow"]}
