@@ -79,7 +79,7 @@ declare const Button: _stitches_react_types_styled_component.StyledComponent<"bu
 }, {
     height: "space";
     width: "space";
-    borderRadius: "radil";
+    borderRadius: "radii";
     gap: "space";
     gridGap: "space";
     columnGap: "space";

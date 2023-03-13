@@ -24,7 +24,7 @@ export const {
     ...defaultThemeMap,
     height: 'space',
     width: 'space',
-    borderRadius: 'radil',
+    borderRadius: 'radii',
   },
   theme: {
     colors,

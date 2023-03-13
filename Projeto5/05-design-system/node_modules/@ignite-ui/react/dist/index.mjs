@@ -106,7 +106,7 @@ var {
   themeMap: __spreadProps(__spreadValues({}, defaultThemeMap), {
     height: "space",
     width: "space",
-    borderRadius: "radil"
+    borderRadius: "radii"
   }),
   theme: {
     colors,

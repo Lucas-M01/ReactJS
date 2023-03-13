@@ -129,7 +129,7 @@ var {
   themeMap: __spreadProps(__spreadValues({}, import_react.defaultThemeMap), {
     height: "space",
     width: "space",
-    borderRadius: "radil"
+    borderRadius: "radii"
   }),
   theme: {
     colors,

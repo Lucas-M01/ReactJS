@@ -14,3 +14,9 @@ export function ColorsGrid() {
           }}
         >
           <strong>${key}</strong>
+          <span>{color}</span>
+        </div>
+      </div>
+    )
+  })
+}
