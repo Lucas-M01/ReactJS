@@ -4,7 +4,7 @@ import {
   fontSizes,
   fontWeights,
   lineHeights,
-  radil,
+  radii,
   space,
 } from '@ignite-ui/tokens'
 
@@ -32,7 +32,7 @@ export const {
     fontSizes,
     fontWeights,
     lineHeights,
-    radil,
+    radii,
     space,
   },
 })

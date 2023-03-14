@@ -25,7 +25,7 @@ __export(src_exports, {
   fontWeights: () => fontWeights,
   fonts: () => fonts,
   lineHeights: () => lineHeights,
-  radil: () => radil,
+  radii: () => radii,
   space: () => space
 });
 module.exports = __toCommonJS(src_exports);
@@ -67,8 +67,8 @@ var space = {
   88: "20rem"
 };
 
-// src/radil.ts
-var radil = {
+// src/radii.ts
+var radii = {
   px: "1px",
   xs: "4px",
   sm: "6px",
@@ -121,6 +121,6 @@ var lineHeights = {
   fontWeights,
   fonts,
   lineHeights,
-  radil,
+  radii,
   space
 });

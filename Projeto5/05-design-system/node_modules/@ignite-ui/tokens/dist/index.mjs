@@ -35,8 +35,8 @@ var space = {
   88: "20rem"
 };
 
-// src/radil.ts
-var radil = {
+// src/radii.ts
+var radii = {
   px: "1px",
   xs: "4px",
   sm: "6px",
@@ -88,6 +88,6 @@ export {
   fontWeights,
   fonts,
   lineHeights,
-  radil,
+  radii,
   space
 };

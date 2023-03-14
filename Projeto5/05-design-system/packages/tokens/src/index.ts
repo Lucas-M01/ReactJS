@@ -1,7 +1,7 @@
 export * from './colors'
 
 export * from './space'
-export * from './radil'
+export * from './radii'
 
 export * from './fonts'
 export * from './font-sizes'
