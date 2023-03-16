@@ -138,6 +138,7 @@ var Box = styled("div", {
   backgroundColor: "$gray800",
   border: "1px solid $gray600"
 });
+Box.displayName = "Box";
 
 // src/components/Text.tsx
 var Text = styled("p", {
@@ -166,6 +167,7 @@ var Text = styled("p", {
     size: "md"
   }
 });
+Text.displayName = "Text";
 
 // src/components/Heading.tsx
 var Heading = styled("h2", {
@@ -189,6 +191,7 @@ var Heading = styled("h2", {
     size: "md"
   }
 });
+Heading.displayName = "Heading";
 
 // src/components/Avatar/styles.ts
 import * as Avatar from "@radix-ui/react-avatar";
@@ -228,6 +231,7 @@ function Avatar2(props) {
     /* @__PURE__ */ jsx(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx(User, {}) })
   ] });
 }
+Avatar2.displayName = "Avatar";
 
 // src/components/Button.tsx
 var Button = styled("button", {
@@ -256,7 +260,7 @@ var Button = styled("button", {
       primary: {
         color: "$white",
         background: "$ignite500",
-        "&:not(:disable):hover": {
+        "&:not(:disabled):hover": {
           background: "$ignite300"
         },
         "&:disabled": {
@@ -266,7 +270,7 @@ var Button = styled("button", {
       secondary: {
         color: "$ignite300",
         border: "2px solid $ignite500",
-        "&:not(:disable):hover": {
+        "&:not(:disabled):hover": {
           background: "$ignite500",
           color: "$white"
         },
@@ -277,7 +281,7 @@ var Button = styled("button", {
       },
       tertiary: {
         color: "$gray100",
-        "&:not(:disable):hover": {
+        "&:not(:disabled):hover": {
           color: "$white"
         },
         "&:disabled": {
@@ -299,6 +303,7 @@ var Button = styled("button", {
     size: "md"
   }
 });
+Button.displayName = "Button";
 
 // src/components/TextInput/styles.ts
 var TextInputContainer = styled("div", {
@@ -351,11 +356,145 @@ function TextInput(_a) {
     /* @__PURE__ */ jsx2(Input, __spreadValues({}, props))
   ] });
 }
+TextInput.displayName = "TextInput";
+
+// src/components/TextArea.tsx
+var TextArea = styled("textarea", {
+  backgroundColor: "$gray900",
+  padding: "$3 $4",
+  borderRadius: "$sm",
+  boxSizing: "border-box",
+  border: "2px solid $gray900",
+  fontFamily: "$default",
+  fontSize: "$sm",
+  color: "$white",
+  fontweight: "regular",
+  resize: "vertical",
+  minHeight: 80,
+  "&:focus": {
+    outline: 0,
+    borderColor: "$ignite300"
+  },
+  "&:disabled": {
+    opacity: 0.5,
+    cursor: "not-allowed"
+  },
+  "&:placeholder": {
+    color: "$gray400"
+  }
+});
+TextArea.displayName = "TextArea";
+
+// src/components/Checkbox/styles.ts
+import * as Checkbox from "@radix-ui/react-checkbox";
+var CheckboxContainer = styled(Checkbox.Root, {
+  all: "unset",
+  width: "$6",
+  height: "$6",
+  backgroundColor: "$gray900",
+  boderRadius: "$xs",
+  lineHeight: 0,
+  cursor: "pointer",
+  overflow: "hidden",
+  boxSizing: "border-box",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  border: "2px solid $gray900",
+  '&[data-state="checked"]': {
+    backgroundColor: "$ignite300"
+  },
+  "&:focus": {
+    border: "2px solid $ignite300"
+  }
+});
+var slideIn = keyframes({
+  from: {
+    transform: "translateY(-100%)"
+  },
+  to: {
+    transform: "translateY(0)"
+  }
+});
+var slideOut = keyframes({
+  from: {
+    transform: "translateY(0)"
+  },
+  to: {
+    transform: "translateY(-100%)"
+  }
+});
+var CheckboxIndicator = styled(Checkbox.Indicator, {
+  color: "$white",
+  width: "$4",
+  height: "$4",
+  '&[data-state="checked"]': {
+    animation: `${slideIn} 150ms ease-out`
+  },
+  '&[data-state="unchecked"]': {
+    animation: `${slideOut} 150ms ease-out`
+  }
+});
+
+// src/components/Checkbox/index.tsx
+import { Check } from "phosphor-react";
+import { jsx as jsx3 } from "react/jsx-runtime";
+function Checkbox2(props) {
+  return /* @__PURE__ */ jsx3(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ jsx3(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ jsx3(Check, { weight: "bold" }) }) }));
+}
+Checkbox2.displayName = "Checkbox";
+
+// src/components/MultiStep/styles.ts
+var MultiStepContainer = styled("div", {});
+var Label = styled(Text, {
+  color: "$gray200",
+  defaultVariants: {
+    size: "xs"
+  }
+});
+var Steps = styled("div", {
+  display: "grid",
+  gridTemplateColumns: "repeat(var(--steps-size), 1fr)",
+  gap: "$2",
+  marginTop: "$1"
+});
+var Step = styled("div", {
+  height: "$1",
+  borderRadius: "$px",
+  backgroundColor: "$gray600",
+  variants: {
+    active: {
+      true: {
+        backgroundColor: "$gray100"
+      }
+    }
+  }
+});
+
+// src/components/MultiStep/index.tsx
+import { jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
+function MultiStep({ size, currentStep = 1 }) {
+  return /* @__PURE__ */ jsxs3(MultiStepContainer, { children: [
+    /* @__PURE__ */ jsxs3(Label, { children: [
+      "Passo ",
+      currentStep,
+      " de ",
+      size
+    ] }),
+    /* @__PURE__ */ jsx4(Steps, { css: { "--steps-size": size }, children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
+      return /* @__PURE__ */ jsx4(Step, { active: currentStep >= step }, step);
+    }) })
+  ] });
+}
+MultiStep.displayName = "MultiStep";
 export {
   Avatar2 as Avatar,
   Box,
   Button,
+  Checkbox2 as Checkbox,
   Heading,
+  MultiStep,
   Text,
+  TextArea,
   TextInput
 };

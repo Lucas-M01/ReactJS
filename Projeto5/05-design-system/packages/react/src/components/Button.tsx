@@ -33,7 +33,7 @@ export const Button = styled('button', {
         color: '$white',
         background: '$ignite500',
 
-        '&:not(:disable):hover': {
+        '&:not(:disabled):hover': {
           background: '$ignite300',
         },
 
@@ -46,7 +46,7 @@ export const Button = styled('button', {
         color: '$ignite300',
         border: '2px solid $ignite500',
 
-        '&:not(:disable):hover': {
+        '&:not(:disabled):hover': {
           background: '$ignite500',
           color: '$white',
         },
@@ -60,7 +60,7 @@ export const Button = styled('button', {
       tertiary: {
         color: '$gray100',
 
-        '&:not(:disable):hover': {
+        '&:not(:disabled):hover': {
           color: '$white',
         },
 
@@ -89,3 +89,5 @@ export const Button = styled('button', {
 export interface ButtonProps extends ComponentProps<typeof Button> {
   as?: ElementType
 }
+
+Button.displayName = 'Button'

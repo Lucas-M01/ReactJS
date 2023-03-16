@@ -9,6 +9,13 @@ export default {
     src: 'https://github.com/Lucas-M01.png',
     alt: 'Lucas Montenegro',
   },
+  argTypes: {
+    src: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
 } as Meta<AvatarProps>
 
 export const Primary: StoryObj<AvatarProps> = {}
